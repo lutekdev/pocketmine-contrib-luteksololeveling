@@ -1,0 +1,18 @@
+#file: noinspection YAMLSchemaValidation
+
+name: LutekSoloLeveling
+version: 1.0.0
+main: LutekDev\LutekSoloLeveling\Main
+api: [ 5.0.0 ]
+author: LutekDev
+
+commands:
+  setrpg:
+    description: "Comando de Admin para setar atributos"
+    usage: "/setrpg <stat> <valor>"
+    permission: sololeveling.admin
+
+permissions:
+  sololeveling.admin:
+    default: op
+    description: "Permite modificar status de jogadores"

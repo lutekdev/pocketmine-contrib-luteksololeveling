@@ -1,0 +1,31 @@
+# Solo Leveling RPG System - Configuration
+# API 5.0.0+
+
+# --- Balanceamento de Atributos ---
+# Quanto cada ponto de status influencia na mecânica real.
+scalers:
+  # Quanto HP real ganha por ponto de Vitalidade
+  hp_per_vitality: 2.5
+  # Quanto de velocidade ganha por ponto de Agilidade (0.001 é recomendado)
+  speed_per_agility: 0.0015
+  # Quanto de ataque ganha por Força
+  damage_per_strength: 0.75
+  # Porcentagem de redução de dano por Defesa (0.5 = 0.5%)
+  defense_percentage: 0.1
+
+# --- Limites (Caps) ---
+# Impede que jogadores fiquem "imortais" ou "flash".
+caps:
+  max_hp: 2000      # Teto máximo de vida
+  max_speed: 0.3    # Teto de velocidade (0.1 é o padrão do mc)
+  max_defense_percent: 80 # Máximo de 80% de redução de dano
+
+# --- Valores Iniciais ---
+# Status de um jogador Nível 1
+defaults:
+  vitality: 10
+  agility: 10
+  intelligence: 10
+  strength: 10
+  sense: 10
+  defense: 5
