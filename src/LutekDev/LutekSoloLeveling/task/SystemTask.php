@@ -14,12 +14,7 @@ class SystemTask extends Task {
     public function onRun () : void {
         foreach ($this->plugin->getServer()->getOnlinePlayers() as $player) {
             $session = $this->plugin->getSession( $player );
-            
-            if ($session !== null) {
-                $session->update();
-                
-                $player->sendTip( "§cHP: " . $player->getHealth() );
-            }
+            $session?->update();
         }
     }
 }

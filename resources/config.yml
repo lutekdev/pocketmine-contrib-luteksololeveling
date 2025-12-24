@@ -29,3 +29,12 @@ defaults:
   strength: 10
   sense: 10
   defense: 5
+
+# --- Gameplay Mecânicas ---
+gameplay:
+  # Quanto de fadiga ganha por bloco andado
+  fatigue_cost_walk: 0.05
+  # Quanto de fadiga ganha por bloco correndo (Sprinting)
+  fatigue_cost_sprint: 0.25
+  # Penalidade máxima de velocidade (0.5 = perde 50% da velocidade com 100 de fadiga)
+  fatigue_speed_penalty: 0.6
