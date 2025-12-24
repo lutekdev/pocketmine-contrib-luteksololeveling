@@ -17,6 +17,17 @@ class AdminRPGCommand extends Command {
     
     public function execute ( CommandSender $sender, string $commandLabel, array $args ) : void {
         if (!$sender instanceof Player) return;
+        
+        // No metodo execute do AdminRPGCommand:
+        if ($args[ 0 ] === "livro") {
+            $book = \pocketmine\item\VanillaItems::BOOK();
+            $book->setCustomName( "§r§dGrimório de Skills" );
+            $book->setLore( [ "§7Use para abrir suas habilidades", "§7Classe: Necromancer" ] ); // Exemplo
+            $sender->getInventory()->addItem( $book );
+            $sender->sendMessage( "§aVocê recebeu o Grimório!" );
+            return;
+        }
+        
         if (count( $args ) < 2) {
             $sender->sendMessage( "§cUse: /setrpg <str|vit|agi|int|def> <valor>" );
             return;
@@ -31,8 +42,5 @@ class AdminRPGCommand extends Command {
         $session->setAttribute( $stat, $val );
         $sender->sendMessage( "§aAtributo $stat definido para $val!" );
         $sender->sendMessage( "§7Verifique sua Scoreboard ou status." );
-        
-        $dash = new \LutekDev\LutekSoloLeveling\skills\list\DashSkill();
-        $dash->cast( $sender, $session );
     }
 }
